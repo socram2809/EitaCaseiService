@@ -46,7 +46,7 @@ public class PresenteResource {
 	 * @return
 	 */
 	@PostMapping(consumes="application/json", produces= {"application/json"})
-	public Presente cadastrarPresente(@Valid @RequestBody Presente presente) {
+	public Presente cadastrarPresente(@RequestBody Presente presente) {
 		return presenteRepository.save(presente);
 	}
 	
