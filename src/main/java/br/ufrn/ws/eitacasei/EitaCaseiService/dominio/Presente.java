@@ -31,7 +31,6 @@ public class Presente {
 	/**
 	 * Foto do presente
 	 */
-	@NotNull
 	private byte[] foto;
 
 	public Long getId() {
