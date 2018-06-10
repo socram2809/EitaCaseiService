@@ -1,9 +1,12 @@
 package br.ufrn.ws.eitacasei.EitaCaseiService.dominio;
 
+import java.sql.Blob;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -32,7 +35,8 @@ public class Presente {
 	 * Foto do presente
 	 */
 	@NotEmpty
-	private String foto;
+	@Lob
+	private byte[] foto;
 
 	public Long getId() {
 		return id;
@@ -50,11 +54,11 @@ public class Presente {
 		this.produto = produto;
 	}
 
-	public String getFoto() {
+	public byte[] getFoto() {
 		return foto;
 	}
 
-	public void setFoto(String foto) {
+	public void setFoto(byte[] foto) {
 		this.foto = foto;
 	}
 
