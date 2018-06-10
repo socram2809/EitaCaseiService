@@ -41,12 +41,11 @@ public class PresenteResource {
 	}
 	
 	/**
-	 * Cadastra um presente utilizando POST
+	 * Mantém um presente utilizando POST
 	 * @param presente
 	 * @return
 	 */
 	@PostMapping(consumes="application/json", produces= {"application/json"})
-	@ResponseStatus(code=HttpStatus.CREATED)
 	public Presente cadastrarPresente(@Valid @RequestBody Presente presente) {
 		return presenteRepository.save(presente);
 	}
@@ -59,17 +58,6 @@ public class PresenteResource {
 	@GetMapping("/{idPresente}")
 	public Presente retornarPresente(@PathVariable Long idPresente) {
 		return presenteRepository.findById(idPresente).get();
-	}
-	
-	/**
-	 * Atualiza um determinado presente utilizando PUT
-	 * @param presente
-	 * @return
-	 */
-	@PutMapping
-	@ResponseStatus(code=HttpStatus.OK)
-	public Presente modificarPresente(@Valid @RequestBody Presente presente) {
-		return presenteRepository.save(presente);
 	}
 	
 	@DeleteMapping("/{idPresente}")
