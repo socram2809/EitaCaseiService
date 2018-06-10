@@ -31,7 +31,8 @@ public class Presente {
 	/**
 	 * Foto do presente
 	 */
-	private byte[] foto;
+	@NotEmpty
+	private String foto;
 
 	public Long getId() {
 		return id;
@@ -49,11 +50,11 @@ public class Presente {
 		this.produto = produto;
 	}
 
-	public byte[] getFoto() {
+	public String getFoto() {
 		return foto;
 	}
 
-	public void setFoto(byte[] foto) {
+	public void setFoto(String foto) {
 		this.foto = foto;
 	}
 
